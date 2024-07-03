@@ -97,7 +97,7 @@ declare type TransformationTypeKey =
 
 // ====== URL QUERY PARAMS
 declare type FormUrlQueryParams = {
-  searchParams: string;
+  searchParams: URLSearchParams;
   key: string;
   value: string | number | null;
 };
