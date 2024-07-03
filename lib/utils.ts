@@ -6,6 +6,11 @@ import { twMerge } from "tailwind-merge";
 
 import { aspectRatioOptions } from "@/constants";
 
+
+interface QsStringifyOptions {
+  skipNulls?: boolean;
+  [key: string]: any;
+}
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -59,7 +64,7 @@ export const formUrlQuery = ({
   value,
 }: FormUrlQueryParams) => {
   const params = { ...qs.parse(searchParams.toString()), [key]: value };
-const options = qs.IStringifyOptions = {
+const options: QsStringifyOptions = {
   skipnNulls:true,
 }
   return `${window.location.pathname}?${qs.stringify(params,options)}`;
